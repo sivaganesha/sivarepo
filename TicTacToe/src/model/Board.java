@@ -1,9 +1,23 @@
 package model;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Board {
+    public ArrayList<ArrayList<Cell>> getGrid() {
+        return grid;
+    }
+
+    public void setGrid(ArrayList<ArrayList<Cell>> grid) {
+        this.grid = grid;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     ArrayList<ArrayList<Cell>> grid;
     int size;
 
@@ -28,7 +42,7 @@ public class Board {
             System.out.print('|');
             for(int j=0;j<size;j++)
             {
-                System.out.print(grid.get(i).get(j).player.symbol+'|');
+                System.out.print(grid.get(i).get(j).player.getSymbol()+'|');
             }
             System.out.println();
         }

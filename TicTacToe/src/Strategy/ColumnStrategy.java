@@ -6,11 +6,17 @@ import java.util.HashMap;
 
 public class ColumnStrategy implements WinningStrategy{
     HashMap<Integer, HashMap<String,Integer>> hashwin =new HashMap<>();
+
+
+
     @Override
+
+
     public boolean checkWinner(Board board, Move move) {
         int colno=move.getCell().getCol();
         String symbol=move.getCell().getPlayer().getSymbol();
-
+        System.out.println("colno: " + colno + " symbol: " + symbol);
+        if(!hashwin.containsKey(colno)){hashwin.put(colno,new HashMap<>());}
         if(!hashwin.get(colno).containsKey(symbol)){
             hashwin.put(colno,new HashMap<>());
         }

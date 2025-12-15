@@ -38,6 +38,8 @@ public abstract class Player {
     }
 
     public Move getInputAndMakeMove(Board board) {
+
+        scanner=new Scanner(System.in);
         if(this.type.equals(PlayerType.BOT)){
             // On the basis of difficulty level, you call and return the
             // response from bot playing strategy.

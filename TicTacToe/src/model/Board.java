@@ -42,7 +42,12 @@ public class Board {
             System.out.print('|');
             for(int j=0;j<size;j++)
             {
-                System.out.print(grid.get(i).get(j).player.getSymbol()+'|');
+                if(grid.get(i).get(j).player!=null)
+                {System.out.print(grid.get(i).get(j).player.getSymbol()+'|');}
+                else
+                {
+                    System.out.print("$$|");
+                }
             }
             System.out.println();
         }

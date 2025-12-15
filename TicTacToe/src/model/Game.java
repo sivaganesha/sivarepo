@@ -8,6 +8,7 @@ import Strategy.WinningStrategy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Game {
 
@@ -91,6 +92,8 @@ List<WinningStrategy> winningStrategies;
         System.out.println("Player "+nextMovePlayerIndex+" is now playing");
         // S2: Take Input from the player using Scanner
         // ToDo: If it is a BOT then automatically decide the Input using Strategy here.
+
+
         Move currentMove = currentPlayer.getInputAndMakeMove(board);
 
         // S3: Validate and Update the Cell
@@ -101,7 +104,7 @@ List<WinningStrategy> winningStrategies;
 
         int currentRow = currentMove.getCell().getRow();
         int currCol = currentMove.getCell().getCol();
-        System.out.println("move is made in --> Row: " + currentRow + "col: " + currCol);
+        System.out.println("move is made in --> Row: " + currentRow + " col: " + currCol);
 
         Cell currCell =  board.getGrid().get(currentRow).get(currCol);
         currCell.setState(CellState.FILLED);
@@ -148,9 +151,9 @@ List<WinningStrategy> winningStrategies;
                 currentMove.getCell().getRow()> board.getSize()-1 ||
                 currentMove.getCell().getState()!=CellState.EMPTY)
         {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
     public void undo() {
         /*

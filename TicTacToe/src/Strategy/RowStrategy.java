@@ -28,7 +28,7 @@ public class RowStrategy implements WinningStrategy{
 
          HashMap<String, Integer> internalmap=hashwin.get(rowNo);
 
-        if(!internalmap.containsKey(symbol)){internalmap.put(symbol,0);}
+        if(!internalmap.containsKey(symbol)){internalmap.put(symbol,1);}
         else {
             internalmap.put(symbol, internalmap.get(symbol) + 1);
         }

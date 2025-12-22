@@ -14,7 +14,6 @@ public class Driver {
         players.add(new Human("Siva", "*"));
         players.add(new Human("Ganesh", "&"));
 
-
         GameController gameController = new GameController();
         Game game =  gameController.startGame(dimension, (ArrayList<Player>) players);
         while(gameController.checkGameState(game).equals(GameState.INPROGRESS)){
